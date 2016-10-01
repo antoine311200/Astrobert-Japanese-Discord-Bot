@@ -4,23 +4,7 @@ const client = new Discord.Client();
 const request = require("request");
 const jquery = require("cheerio");
 const http = require("http");
-const cool = require('cool-ascii-faces');
 const express = require('express');
-
-var app = express();
-app.set('port', (process.env.PORT || 5000));
-app.use(express.static(__dirname + '/public'));
-app.set('views', __dirname + '/views');
-app.set('view engine', 'ejs');
-app.get('/', function (request, response) {
-  response.render('pages/index')
-});
-app.get('/cool', function (request, response) {
-  response.send(cool());
-});
-app.listen(app.get('port'), function () {
-	console.log('Node app is running on port', app.get('port'));
-});
 
 const BreakException = {};
 
@@ -38,7 +22,7 @@ client.on('message', message => {
 	if(message.author.id === "177419389447045120" || message.author.id === "153561453440401409" || message.author.id === "185293714040684544") 
 		for (var cmd in admin_commands) if (msg.indexOf(cmd) > -1) admin_commands[cmd].callback(message);
 });
-client.login('MTg1MTQ2NTEwMjEwNjI5NjMy.CsuwKg.CoQlr8Nc03f6fBM3YEMJfNUE-UI').then("Bot connected !").catch(console.log);
+client.login('my-token').then("Bot connected !").catch(console.log);
 
 const commands = {};
 const admin_commands = {};
@@ -182,7 +166,7 @@ setInterval(function () {
 	http.get(options, function (http_res) {
 		console.log("Sent http request to astrobert.herokuapp.com to stay awake.");
 	});
-	client.login("MTg1MTQ2NTEwMjEwNjI5NjMy.CsuwKg.CoQlr8Nc03f6fBM3YEMJfNUE-UI", function (error, token) {
+	client.login("my-token", function (error, token) {
 		if (error) console.log(error);
 	});
 }, interval);
