@@ -1,0 +1,19 @@
+{
+  "name": "astrobert-v2-japanese-discord-bot",
+  "version": "2.0.0",
+  "description": "A Japanese Discord bot named Astrobert Version 2",
+  "engines": {
+    "node": "6.6.0",
+    "npm": "3.10.3"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "license": "MIT"
+}
